@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'com.servlet-framework'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.servletsecurity.Main"
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+
+dependencies {
+    compileOnly('jakarta.servlet:jakarta.servlet-api:5.0.0');
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.14.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.14.2'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.google.guava:guava:31.1-jre'
+    implementation 'io.vavr:vavr:0.10.4'
+    implementation 'org.reflections:reflections:0.10.2'
+    implementation 'org.springframework:spring-core:6.0.7'
+}
+
