@@ -1,10 +1,10 @@
 # rest-servlet
 java servlet with annotations
 
-#java version
+# java version
 supported java version 17
 
-#add it your web.xml
+# add it your web.xml
 
     <context-param>
         <param-name>main-class</param-name>
