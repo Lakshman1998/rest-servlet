@@ -29,3 +29,6 @@ supported java version 17
     <listener>
         <listener-class>org.servletsecurity.listeners.RequestMatcherLoaderListener</listener-class>
     </listener>
+    
+# build
+./gradlew clean build -x test
