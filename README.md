@@ -32,5 +32,3 @@ supported java version 17
     
 # build
 ./gradlew clean build -x test
-
-
